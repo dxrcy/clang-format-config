@@ -17,6 +17,9 @@ AlignConsecutiveBitFields: Consecutive
 AlignConsecutiveDeclarations: None
 AlignConsecutiveMacros: None
 
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortEnumsOnASingleLine: true
@@ -42,7 +45,7 @@ BreakTemplateDeclarations: Yes
 
 CompactNamespaces: false
 FixNamespaceComments: true
-NamespaceIndentation: All
+NamespaceIndentation: Inner
 
 EmptyLineAfterAccessModifier: Never
 EmptyLineBeforeAccessModifier: Leave
