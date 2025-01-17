@@ -10,6 +10,7 @@ LineEnding: LF
 AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: None
 AlignEscapedNewlines: Left
+AlignOperands: DontAlign
 AlignTrailingComments: Always
 
 AlignConsecutiveAssignments: None
