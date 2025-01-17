@@ -7,7 +7,7 @@ PPIndentWidth: -1
 ColumnLimit: 80
 LineEnding: LF
 
-AlignAfterOpenBracket: AlwaysBreak
+AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: None
 AlignEscapedNewlines: Left
 AlignTrailingComments: Always
