@@ -8,7 +8,7 @@ ColumnLimit: 80
 LineEnding: LF
 
 AlignAfterOpenBracket: AlwaysBreak
-AlignArrayOfStructures: Left
+AlignArrayOfStructures: None
 AlignEscapedNewlines: Left
 AlignTrailingComments: Always
 
