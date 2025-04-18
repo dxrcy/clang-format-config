@@ -1,26 +1,46 @@
+---
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
 AccessModifierOffset: -4
 PPIndentWidth: -1
-
 ColumnLimit: 80
 LineEnding: LF
-
 AlignAfterOpenBracket: BlockIndent
 AlignArrayOfStructures: None
 AlignEscapedNewlines: Left
 AlignOperands: DontAlign
 AlignTrailingComments: Always
-
-AlignConsecutiveAssignments: None
-AlignConsecutiveBitFields: Consecutive
-AlignConsecutiveDeclarations: None
-AlignConsecutiveMacros: None
-
+AlignConsecutiveAssignments:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveBitFields:
+  Enabled: true
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveDeclarations:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  AlignFunctionPointers: false
+  PadOperators: true
+AlignConsecutiveMacros:
+  Enabled: false
+  AcrossEmptyLines: false
+  AcrossComments: false
+  AlignCompound: false
+  AlignFunctionPointers: false
+  PadOperators: true
 AllowAllArgumentsOnNextLine: true
 AllowAllParametersOfDeclarationOnNextLine: true
-
 AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortEnumsOnASingleLine: true
@@ -28,21 +48,17 @@ AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLambdasOnASingleLine: None
 AllowShortLoopsOnASingleLine: false
-
 AlwaysBreakBeforeMultilineStrings: false
 BreakAdjacentStringLiterals: true
 BreakStringLiterals: true
-
 BinPackArguments: false
 BinPackParameters: false
 PackConstructorInitializers: Never
-
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: BeforeColon
 BreakFunctionDefinitionParameters: false
 BreakTemplateDeclarations: Yes
-
 BreakBeforeBraces: Custom
 BraceWrapping:
   AfterCaseLabel: false
@@ -62,79 +78,65 @@ BraceWrapping:
   SplitEmptyFunction: true
   SplitEmptyRecord: true
   SplitEmptyNamespace: true
-
 CompactNamespaces: false
 FixNamespaceComments: true
 NamespaceIndentation: Inner
-
 EmptyLineAfterAccessModifier: Never
 EmptyLineBeforeAccessModifier: Leave
-
 IncludeBlocks: Regroup
 SortIncludes: CaseSensitive
 SortUsingDeclarations: Lexicographic
 IncludeCategories:
   # C standard
-  - Regex:          '^<(assert|limits|signal|stdlib|ctype|locale|stdarg|string|errno|math|stddef|time|float|setjmp|stdio|iso646|wchar|wctype|complex|inttypes|stdint|tgmath|fenv|stdbool|stdalign|stdatomic|stdnoreturn|threads|uchar|stdbit|stdckdint|stdalign|stdbool|stdnoreturn)\.h>$'
-    Priority:       40
-    SortPriority:   41
+  - Regex: ^<(assert|limits|signal|stdlib|ctype|locale|stdarg|string|errno|math|stddef|time|float|setjmp|stdio|iso646|wchar|wctype|complex|inttypes|stdint|tgmath|fenv|stdbool|stdalign|stdatomic|stdnoreturn|threads|uchar|stdbit|stdckdint|stdalign|stdbool|stdnoreturn)\.h>$
+    Priority: 40
+    SortPriority: 41
   # Posix
-  - Regex:          '^<(aio|libgen|spawn|sys/time|arpa/inet|limits|stdarg|sys/times|assert|locale|stdbool|sys/types|complex|math|stddef|sys/uio|cpio|monetary|stdint|sys/un|ctype|mqueue|stdio|sys/utsname|dirent|ndbm|stdlib|sys/wait|dlfcn|net/if|string|syslog|errno|netdb|strings|tar|fcntl|netinet/in|stropts|termios|fenv|netinet/tcp|sys/ipc|tgmath|float|nl_types|sys/mman|time|fmtmsg|poll|sys/msg|trace|fnmatch|pthread|sys/resource|ulimit|ftw|pwd|sys/select|unistd|glob|regex|sys/sem|utime|grp|sched|sys/shm|utmpx|iconv|search|sys/socket|wchar|inttypes|semaphore|sys/stat|wctype|iso646|setjmp|sys/statvfs|wordexp|langinfo|signal)\.h>$'
-    Priority:       20
+  - Regex: ^<(aio|libgen|spawn|sys/time|arpa/inet|limits|stdarg|sys/times|assert|locale|stdbool|sys/types|complex|math|stddef|sys/uio|cpio|monetary|stdint|sys/un|ctype|mqueue|stdio|sys/utsname|dirent|ndbm|stdlib|sys/wait|dlfcn|net/if|string|syslog|errno|netdb|strings|tar|fcntl|netinet/in|stropts|termios|fenv|netinet/tcp|sys/ipc|tgmath|float|nl_types|sys/mman|time|fmtmsg|poll|sys/msg|trace|fnmatch|pthread|sys/resource|ulimit|ftw|pwd|sys/select|unistd|glob|regex|sys/sem|utime|grp|sched|sys/shm|utmpx|iconv|search|sys/socket|wchar|inttypes|semaphore|sys/stat|wctype|iso646|setjmp|sys/statvfs|wordexp|langinfo|signal)\.h>$
+    Priority: 20
   # C++ standard
-  - Regex:          '^<(algorithm|format|new|stdexcept|any|forward_list|numbers|stdfloat|array|fstream|numeric|stop_token|atomic|functional|optional|streambuf|barrier|future|ostream|string|bit|generator|print|string_view|bitset|initializer_list|queue|strstream|charconv|iomanip|random|syncstream|chrono|ios|ranges|system_error|codecvt|iosfwd|ratio|thread|compare|iostream|regex|tuple|complex|istream|scoped_allocator|type_traits|concepts|iterator|semaphore|typeindex|condition_variable|latch|set|typeinfo|coroutine|limits|shared_mutex|unordered_map|deque|list|source_location|unordered_set|exception|locale|span|utility|execution|map|spanstream|valarray|expected|mdspan|sstream|variant|filesystem|memory|stack|vector|flat_map|memory_resource|stacktrace|version|flat_set|mutex)>$'
-    Priority:       30
+  - Regex: ^<(algorithm|format|new|stdexcept|any|forward_list|numbers|stdfloat|array|fstream|numeric|stop_token|atomic|functional|optional|streambuf|barrier|future|ostream|string|bit|generator|print|string_view|bitset|initializer_list|queue|strstream|charconv|iomanip|random|syncstream|chrono|ios|ranges|system_error|codecvt|iosfwd|ratio|thread|compare|iostream|regex|tuple|complex|istream|scoped_allocator|type_traits|concepts|iterator|semaphore|typeindex|condition_variable|latch|set|typeinfo|coroutine|limits|shared_mutex|unordered_map|deque|list|source_location|unordered_set|exception|locale|span|utility|execution|map|spanstream|valarray|expected|mdspan|sstream|variant|filesystem|memory|stack|vector|flat_map|memory_resource|stacktrace|version|flat_set|mutex)>$
+    Priority: 30
   # C++ standard C
-  - Regex:          '^<(cassert|cfenv|climits|csetjmp|cstddef|cstdlib|cuchar|cctype|cfloat|clocale|csignal|cstdint|cstring|cwchar|cerrno|cinttypes|cmath|cstdarg|cstdio|ctime|cwctype)>$'
-    Priority:       40
+  - Regex: ^<(cassert|cfenv|climits|csetjmp|cstddef|cstdlib|cuchar|cctype|cfloat|clocale|csignal|cstdint|cstring|cwchar|cerrno|cinttypes|cmath|cstdarg|cstdio|ctime|cwctype)>$
+    Priority: 40
   # Other system C
-  - Regex:          '^<[^>]+\.h>$'
-    Priority:       10
-    SortPriority:   11
+  - Regex: ^<[^>]+\.h>$
+    Priority: 10
+    SortPriority: 11
   # Other system C++
-  - Regex:          '^<[^>]+>$'
-    Priority:       10
+  - Regex: ^<[^>]+>$
+    Priority: 10
   # Local/private
-  - Regex:          '"[^"]+"'
-    Priority:       1
-
+  - Regex: '"[^"]+"'
+    Priority: 1
 IndentAccessModifiers: false
 IndentCaseBlocks: false
 IndentCaseLabels: true
 IndentGotoLabels: false
 IndentPPDirectives: BeforeHash
 IndentRequiresClause: true
-IndentWrappedFunctionNames: true
+IndentWrappedFunctionNames: false
 LambdaBodyIndentation: Signature
-
 InsertBraces: true
 InsertNewlineAtEOF: false
-
 KeepEmptyLines:
   AtEndOfFile: false
   AtStartOfBlock: false
   AtStartOfFile: false
-
 MaxEmptyLinesToKeep: 1
 SeparateDefinitionBlocks: Always
-
-# IntegerLiteralSeparator:
-#   Binary: 4
-#   Decimal: 3
-#   Hex: 4
-#   BinaryMinDigits: 5
-#   DecimalMinDigits: 5
-#   HexMinDigits: 5
-
 PointerAlignment: Right
 ReferenceAlignment: Pointer
-
 QualifierAlignment: Custom
-QualifierOrder: [inline, static, constexpr, const, type]
-
+QualifierOrder:
+  - inline
+  - static
+  - constexpr
+  - const
+  - type
 RemoveParentheses: ReturnStatement
 RemoveSemicolon: true
-
 BitFieldColonSpacing: Both
 SpaceAfterCStyleCast: true
 SpaceAfterLogicalNot: false
@@ -152,7 +154,6 @@ SpacesBeforeTrailingComments: 2
 SpacesInAngles: false
 SpacesInParens: Never
 SpacesInSquareBrackets: false
-
 SpaceBeforeParens: Custom
 SpaceBeforeParensOptions:
   AfterControlStatements: true
@@ -161,7 +162,6 @@ SpaceBeforeParensOptions:
   AfterFunctionDefinitionName: false
   AfterIfMacros: true
   BeforeNonEmptyParentheses: false
-
 ReflowComments: true
 SpacesInLineCommentPrefix:
   Minimum: 1
@@ -172,5 +172,4 @@ SpacesInLineCommentPrefix:
 # BreakBinaryOperations: Never
 # RemoveEmptyLinesInUnwrappedLines: true
 # WrapNamespaceBodyWithEmptyLines: Always
-
 
